@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Ranking FIFA</title>
+    <style>
+      .spinner-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .spinner-border {
+        width: 5rem;
+        height: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>FIFA World Ranking Top 20</h1>
+      </header>
+      <div class="wrapper">
+        <label for="confederationSelect">Filter by Confederation:</label>
+        <select id="confederationSelect">
+          <option value="all">All</option>
+        </select>
+        <div id="spinner" class="spinner-container">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <table id="rankingTable" style="display: none;">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Points</th>
+              <th>Previous Points</th>
+              <th>+/-</th>
+              <th>Confederation</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <button id="loadMoreBtn" style="display: none;">Cargar más</button>
+      </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
