@@ -32,11 +32,11 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 18px 100px;
-    background: #080404;
+    background: var(--main-color);
 }
 
 .bx-menu {
-    color: #fff;
+    color: var(--text-color);
 }
 
 .logo {
@@ -123,10 +123,10 @@ header {
 }
 
 .news-container, .asked-question-container {
-     display: grid; 
-     grid-template-columns: repeat(auto-fit, minmax(300px, auto)); 
-     gap: 1rem; 
-     margin-top: 2rem; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto)); 
+    gap: 1rem; 
+    margin-top: 2rem; 
 }
 
 .box {
@@ -143,26 +143,18 @@ header {
 }
 
 .box .box-img{
-     width: 100%; 
-     height: 400px; 
-     overflow: hidden; 
-     border-radius: 44px 4px 0 0; 
+    width: 100%; 
+    height: 400px; 
+    overflow: hidden; 
+    border-radius: 44px 4px 0 0; 
 }
 
-/* .box-img {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-} */
-
-/* Por los momentos no se usa imagen */
 .box .box-img img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover; 
-     object-position: center; 
-     transition: .5s; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    transition: .5s; 
 }
 
 .box .box-img img:hover { 
@@ -200,10 +192,10 @@ header {
 }
 
 .box-question .box-img{
-     width: 100%; 
-     height: 400px; 
-     overflow: hidden; 
-     border-radius: 44px; 
+    width: 100%; 
+    height: 400px; 
+    overflow: hidden; 
+    border-radius: 44px; 
 }
 
 .tittle-question {
