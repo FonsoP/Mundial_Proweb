@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Scoreboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- Para la alineación dinámica -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script src="jquery.matchcenter.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="match-scoreboard">
+            <div class="scoreboard-header">
+                <div class="scoreboard-status" id="match-status">Status</div>
+                <div class="tittle-container">
+                    <img id="tournament-logo" src="" alt="Tournament Logo" height="80px" width="150px"/>
+                    <div class="scoreboard-tournament" id="match-tournament"></div>
+                </div>
+                
+                <div class="scoreboard-actions">
+                    <button class="btn-icon"><i class="material-icons-outlined">grade</i></button>
+                    <button class="btn-icon"><i class="material-icons-outlined">add_alert</i></button>
+                </div>
+            </div>
+            <div class="scoreboard-content">
+                <div class="scoreboard-column">
+                    <div class="team team--home">
+                        <div class="team-logo">
+                            <img id="hometeam-logo" src="" alt="Home Team Logo" />
+                        </div>
+                        <h2 class="team-name" id="hometeam-name">Home Team</h2>
+                    </div>
+                </div>
+                <div class="scoreboard-column">
+                    <div class="match-details">
+                        <div class="match-date" id="match-date">
+                            Match Date: <strong>00:00</strong>
+                        </div>
+                        <div class="match-score">
+                            <span class="match-score-number match-score-number--leading" id="hometeam-score">0</span>
+                            <span class="match-score-divider">:</span>
+                            <span class="match-score-number" id="awayteam-score">0</span>
+                        </div>
+                        <div class="match-time-lapsed" id="match-time-lapsed">
+                            Time Lapsed
+                        </div>
+                        <div class="match-referee">
+                            Referee: <strong id="match-referee">Name</strong>
+                        </div>
+                        <div class="match-bet-options">
+                            <button class="match-bet-option">Option 1</button>
+                            <button class="match-bet-option">Option 2</button>
+                            <button class="match-bet-option">Option 3</button>
+                        </div>
+                        <button class="match-bet-place">Place a bet</button>
+                    </div>
+                </div>
+                <div class="scoreboard-column">
+                    <div class="team team--away">
+                        <div class="team-logo">
+                            <img id="awayteam-logo" src="" alt="Away Team Logo" />
+                        </div>
+                        <h2 class="team-name" id="awayteam-name">Away Team</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match-section" id="events">
+            <h2>Match Events</h2>
+            <ul class="event-list" id="event-list">
+                <!-- Eventos del partido -->
+            </ul>
+        </div>
+
+        <div class="match-section" id="stats">
+            <h2>Match Statistics</h2>
+            <dl class="stats-list" id="stats-list">
+                <!-- Estadísticas del partido -->
+            </dl>
+        </div>
+
+        <div class="match-section" id="line-ups">
+            <h2>Team Line-ups</h2>
+            <div class="line-up">
+                <h3>Home Team</h3>
+                <ul class="line-up-list" id="home-line-up">
+                    <!-- Jugadores del equipo local -->
+                </ul>
+            </div>
+            <div class="line-up">
+                <h3>Away Team</h3>
+                <ul class="line-up-list" id="away-line-up">
+                    <!-- Jugadores del equipo visitante -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Cancha dinámica -->
+        <div class="matchcenter-field-container">
+            <div id="matchfield"></div>
+        </div>
+    </div> 
+    <script src="script.js" defer></script>
+</body>
+</html>
