@@ -1,0 +1,66 @@
+body {
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #212529; /* Texto oscuro */
+    font-family: 'Inter', sans-serif; /* Fuente de Google Fonts */
+}
+
+h1 {
+    color: #212529; /* Color del texto del título */
+}
+
+.confederation-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confederation-logo {
+    width: 80px; /* Tamaño razonable para el logo */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.table {
+    background-color: #ffffff; /* Fondo blanco para la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar contenido desbordante */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.table th, .table td {
+    vertical-align: middle; /* Alinear verticalmente el contenido */
+}
+
+.table img {
+    width: 32px; /* Tamaño de los escudos */
+    height: auto; /* Mantener proporción */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Fondo para filas impares */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Fondo al pasar el cursor por encima */
+}
+
+.table th {
+    background-color: #212529; /* Fondo oscuro para el encabezado */
+    color: #ffffff; /* Texto blanco para el encabezado */
+}
+
+.table td {
+    color: #212529; /* Texto oscuro para el contenido */
+}
+
+.table td, .table th {
+    border-top: 1px solid #dee2e6; /* Borde superior */
+}
+
+.top-positions {
+    background-color: #d4edda; /* Fondo verde claro */
+}
+
+.seventh-position {
+    background-color: #fff3cd; /* Fondo amarillo claro */
+}
