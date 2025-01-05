@@ -55,7 +55,7 @@ async function cargarConfederacion() {
     }
 }
 
-async function cargarTablasDeGrupos() {
+async function cargarGrupos() {
     try {
         mostrarSpinner();
         const standingsData = await fetchAPI(standingsApiUrl);
@@ -63,13 +63,54 @@ async function cargarTablasDeGrupos() {
 
         console.log(`Datos de la confederación africana obtenidos:`, standings);
 
+        // Obtener los grupos únicos y ordenar alfabéticamente
+        const grupos = [...new Set(standings.map(standing => standing.group))].sort();
+
+        console.log(`Grupos obtenidos:`, grupos);
+
+        const groupSelect = document.getElementById('group-select');
+        groupSelect.innerHTML = '<option value="all">Todos los Grupos</option>'; // Limpiar y añadir opción para todos los grupos
+
+        grupos.forEach(grupo => {
+            const option = document.createElement('option');
+            option.value = grupo;
+            option.innerText = `Grupo ${grupo}`;
+            groupSelect.appendChild(option);
+        });
+
+        // Cargar la tabla del primer grupo por defecto
+        if (grupos.length > 0) {
+            await cargarTablasDeGrupos("all");
+        }
+
+    } catch (error) {
+        console.error('Error al cargar los grupos:', error);
+    } finally {
+        ocultarSpinner();
+    }
+}
+
+async function cargarTablasDeGrupos(group) {
+    try {
+        mostrarSpinner();
+        const standingsData = await fetchAPI(standingsApiUrl);
+        let standings = standingsData.standings;
+
+        console.log(`Datos filtrados por grupo ${group}:`, standings);
+
         const tablesContainer = document.getElementById('tables-container');
         tablesContainer.innerHTML = '';  // Limpiar el contenedor de tablas
 
-        const grupos = [...new Set(standings.map(standing => standing.group))].sort();
-        for (const grupo of grupos) {
-            const groupStandings = standings.filter(standing => standing.group === grupo);
-            const table = await crearTablaDePosiciones(groupStandings, grupo);
+        if (group === "all") {
+            const grupos = [...new Set(standings.map(standing => standing.group))].sort();
+            for (const grupo of grupos) {
+                const groupStandings = standings.filter(standing => standing.group === grupo);
+                const table = await crearTablaDePosiciones(groupStandings, grupo);
+                tablesContainer.appendChild(table);
+            }
+        } else {
+            const groupStandings = standings.filter(standing => standing.group === group);
+            const table = await crearTablaDePosiciones(groupStandings, group);
             tablesContainer.appendChild(table);
         }
 
@@ -144,8 +185,15 @@ async function crearTablaDePosiciones(groupStandings, group) {
     return table;
 }
 
+// Cargar los datos al cambiar el grupo
+document.getElementById('group-select').addEventListener('change', (event) => {
+    const selectedGroup = event.target.value;
+    console.log(`Grupo seleccionado: ${selectedGroup}`);
+    cargarTablasDeGrupos(selectedGroup);
+});
+
 // Cargar los datos al cargar la página
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarConfederacion();
-    await cargarTablasDeGrupos();  // Cargar los grupos de la confederación africana
+    await cargarGrupos();  // Cargar los grupos de la confederación africana
 });
