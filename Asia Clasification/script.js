@@ -186,7 +186,13 @@ async function crearTablaDePosiciones(groupStandings, group, round) {
     }
 
     table.appendChild(tbody);
-    return table;
+    
+    // Crear un contenedor responsivo para la tabla de cada grupo
+    const tableWrapper = document.createElement('div');
+    tableWrapper.classList.add('table-responsive');
+    tableWrapper.appendChild(table);  // Añadir la tabla al contenedor
+
+    return tableWrapper;  // Devolver el contenedor con la tabla
 }
 
 // Cargar los datos al cambiar la ronda
