@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --clr-white: #fff;
+    --clr-black: #080404;
+	--clr-text: #989c9b;
+	--ff-poppins: "Poppins", sans-serif;
+}
+
 body {
     background-color: #f8f9fa; /* Fondo claro */
     color: #212529; /* Texto oscuro */
     font-family: 'Inter', sans-serif; /* Fuente de Google Fonts */
 }
 
+header{
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+	text-align: center;
+	font-weight: bolder;
+	padding: 1.5em;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
 h1 {
-    color: #212529; /* Color del texto del título */
+    color: #212529;
+    font-weight: bold;
 }
 
 .confederation-header {
+    margin-top: 5em;
     display: flex;
     flex-direction: column;
     align-items: center;

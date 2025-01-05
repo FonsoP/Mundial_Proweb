@@ -10,20 +10,21 @@
 
 body {
 	font-family: var(--ff-poppins);
-	color: var(--clr-text);
+	color: var(--clr-black);
 }
 
-table{
-	margin-top: 1em;
-	margin-bottom: 1em;
+h1{
+	margin-top: 2em;
 }
 
 header{
 	background-color: var(--clr-black);
 	color: var(--clr-white);
 	text-align: center;
-	font-weight: bolder;
 	padding: 1.5em;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 .spinner-container {
@@ -64,6 +65,8 @@ table {
     border-collapse: collapse;
     width: 100%;
     background: var(--clr-white);
+	margin: 1em auto;
+	color: var(--clr-text);
 }
 
 th {

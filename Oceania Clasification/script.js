@@ -130,6 +130,11 @@ async function cargarTablasDeGrupos(group) {
     }
 }
 
+function capitalizeWords(countryName) {
+    if (typeof countryName !== 'string' || countryName.length === 0) return countryName;
+    return countryName[0].toUpperCase() + countryName.slice(1);
+}
+
 async function crearTablaDePosiciones(groupStandings, group) {
     // Ordenar las posiciones por puntos de mayor a menor
     groupStandings.sort((a, b) => b.points - a.points);
@@ -166,7 +171,7 @@ async function crearTablaDePosiciones(groupStandings, group) {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td><img src="${country.flags.png}" alt="${country.name.es.common}" /></td>
-                <td>${country.name.es.common}</td>
+                <td>${capitalizeWords(country.name.es.common)}</td>
                 <td>${standing.matches_played}</td>
                 <td>${standing.wins}</td>
                 <td>${standing.loss}</td>
@@ -188,7 +193,13 @@ async function crearTablaDePosiciones(groupStandings, group) {
     }
 
     table.appendChild(tbody);
-    return table;
+
+    // Crear un contenedor responsivo para la tabla de cada grupo
+    const tableWrapper = document.createElement('div');
+    tableWrapper.classList.add('table-responsive');
+    tableWrapper.appendChild(table);  // Añadir la tabla al contenedor
+
+    return tableWrapper;  // Devolver el contenedor con la tabla
 }
 
 // Cargar los datos al cambiar el grupo
