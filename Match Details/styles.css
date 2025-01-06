@@ -15,6 +15,9 @@
   --color-bg-secondary: #f3f5f9;
   --color-bg-alert: #fdeaec;
   --color-theme-primary: #623ce6;
+  --clr-white: #fff;
+  --clr-black: #080404;
+	--clr-text: #989c9b;
 }
 
 button,
@@ -39,12 +42,29 @@ body {
   background-color: var(--color-bg-secondary);
 }
 
+header{
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+	text-align: center;
+	font-weight: bolder;
+	padding: 1.5em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+header img{
+  display: initial;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin-top: 5em;
 }
 
 /* Match Scoreboard */
