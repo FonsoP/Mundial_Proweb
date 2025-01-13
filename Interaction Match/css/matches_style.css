@@ -41,12 +41,22 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
     background: var(--bg);
 }
 
 .confederation-header{
     margin-top: 6em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.logo-block{
+    text-align: center;
+}
+
+.confederation-logo{
+    height: 4em;
+    margin-bottom: 1em;
 }
 
 ::-webkit-scrollbar {
