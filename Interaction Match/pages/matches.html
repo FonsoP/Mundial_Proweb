@@ -22,28 +22,35 @@
         <a href="#" class="logo"><img src="/Interaction Match/images/logo.webp" alt="" width="50px" height="25px"></a>
     </header>
     <div class="container">
-        <div class="confederation-header">
+        <div class="confederation-header text-center mb-4">
             <div class="logo-block">
                 <img class="confederation-logo" id="confederation-logo" src="" alt="Confederation Logo"/>
             </div>
             <h1 id="confederation-name"></h1>
             <p id="confederation-description"></p>
         </div>
-        <div class="controls">
-            <select id="select-confederation">
-                <option value="1">AFC - Confederación Asiática de Fútbol</option>
-                <option value="2">CAF - Confederación Africana de Fútbol</option>
-                <option value="3">CONCACAF - Confederación de Fútbol de Norte, Centroamérica y el Caribe</option>
-                <option value="4">CONMEBOL - Confederación Sudamericana de Fútbol</option>
-                <option value="5">OFC - Confederación de Fútbol de Oceanía</option>
-                <option value="6">UEFA - Unión de Asociaciones Europeas de Fútbol</option>
-            </select>
-            <button id="filter-played">Show Played Matches</button>
-            <button id="filter-unplayed">Show Unplayed Matches</button>
-        </div>
-        <h1 class="section-heading">Match By Date</h1>
+        <div class="controls row g-2 justify-content-center">
+            <div class="col-12 col-sm-6">
+                <select id="select-confederation" class="form-select fs-5">
+                    <option value="1">AFC - Confederación Asiática de Fútbol</option>
+                    <option value="2">CAF - Confederación Africana de Fútbol</option>
+                    <option value="3">CONCACAF - Confederación de Fútbol de Norte, Centroamérica y el Caribe</option>
+                    <option value="4">CONMEBOL - Confederación Sudamericana de Fútbol</option>
+                    <option value="5">OFC - Confederación de Fútbol de Oceanía</option>
+                    <option value="6">UEFA - Unión de Asociaciones Europeas de Fútbol</option>
+                </select>
+            </div>
+            <div class="col-6 col-sm-3">
+                <button id="filter-played" class="btn btn-secondary w-100 fs-4">Show Played Matches</button>
+            </div>
+            <div class="col-6 col-sm-3">
+                <button id="filter-unplayed" class="btn btn-secondary w-100 fs-4">Show Unplayed Matches</button>
+            </div>
+        </div>        
+        <h1 class="section-heading text-center mt-4">Match By Date</h1>
         <div class="matches" id="match-date"></div>
     </div>
+    
     <div class="scroll-top">
         <img src="/Interaction Match/images/arrow.png" alt="arrow" />
     </div>

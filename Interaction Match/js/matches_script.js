@@ -72,9 +72,9 @@ async function obtenerDatosEquipo(teamId, teamType, match) {
 
 function getMatchHTML(match, leagueId) {
   return `
-    <div class="match" style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px;">
+    <div class="match shadow-card" style="border: 1px solid #ccc; margin-bottom: 10px; padding: 10px;">
       <div class="match-info">
-        <h4 class="group">${match.stage}</h4>
+        <h4 class="group fw-bold">${match.stage}</h4>
       </div>
       <div class="flags">
         <div class="home-flag">
@@ -90,7 +90,7 @@ function getMatchHTML(match, leagueId) {
       <div class="time-area">
         ${match.status === "Finished" ? `
           <div class="result">
-            <h4>${match.hometeam_score} - ${match.awayteam_score}</h4>
+            <h3 class="text-success fw-bold">${match.hometeam_score} - ${match.awayteam_score}</h4>
           </div>` : `
           <div class="time">
             <h4 class="month">${new Date(match.date).toLocaleString('default', { month: 'short' })}</h4>
@@ -100,7 +100,7 @@ function getMatchHTML(match, leagueId) {
           </div>
         `}
       </div>
-      <button class="details-button" onclick="verDetalles(${match.id}, ${leagueId})">Ver Detalles</button>
+      <button class="details-button btn btn-secondary fs-5 fw-bold" onclick="verDetalles(${match.id}, ${leagueId})">Ver Detalles</button>
     </div>
   `;
 }

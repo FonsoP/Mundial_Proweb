@@ -83,6 +83,10 @@ body {
     margin: 0 auto;
 }
 
+.controls{
+    font-size: 1.4em;
+}
+
 .tab-link {
     margin: 3rem 2rem 3rem 0;
     display: inline-flex;
@@ -199,6 +203,20 @@ body {
     transform: rotate(180deg);
 }
 
+.shadow-card {
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Opcional, para esquinas redondeadas */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: box-shadow 0.3s ease; /* Efecto al pasar el cursor */
+}
+  
+.shadow-card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Más pronunciada al hover */
+}
+
 @media (max-width: 382px) {
     .tab-link {
         margin: 2rem 0 0 0;
@@ -206,5 +224,12 @@ body {
     .matchs,
     .matchs-by-group {
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+}
+
+@media (max-width: 412px) {
+    .confederation-header{
+        margin-right: 1em;
+        margin-left: 1em;
     }
 }
