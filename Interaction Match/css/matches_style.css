@@ -10,14 +10,28 @@
 }
 
 :root {
-    --bg: rgb(227, 232, 255);
+    --bg: #fff;
     --card-bg: rgb(244, 245, 247);
     --white: #fff;
+    --clr-black: #080404;
+    --clr-text: #989c9b;
     --shadow: rgba(235, 240, 250, 0.731);
     --text-dark: rgb(5, 29, 49);
     --badge-text: #343483;
     --btn-bg: rgb(82, 84, 221);
     --scrollbar-bg: rgb(250, 248, 255);
+}
+
+header{
+	background-color: var(--clr-black);
+	color: var(--white);
+	text-align: center;
+	font-weight: bolder;
+	padding: 1.5em;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 html {
@@ -29,6 +43,10 @@ html {
 body {
     font-size: 1.6rem;
     background: var(--bg);
+}
+
+.confederation-header{
+    margin-top: 6em;
 }
 
 ::-webkit-scrollbar {
