@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const cardLink = document.createElement('a');
         cardLink.classList.add('card-link');
+        console.log(confederation.website);
         cardLink.href = confederation.website;
         cardLink.target = "_blank";
 

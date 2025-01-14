@@ -77,7 +77,7 @@ async function obtenerProximosPartidos() {
   
   function verDetalles(matchId) {
     console.log(`Match ID: ${matchId}`); // Imprimir el ID del partido para depuración
-    window.location.href = `match_details.html?match_id=${matchId}`;
+    window.location.href = `/..//Interaction%20Match/pages/matches.html`;
   }
   
   /* Reutilización de la función fetchAPI */
