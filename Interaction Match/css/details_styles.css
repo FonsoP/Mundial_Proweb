@@ -15,6 +15,21 @@
   --color-bg-secondary: #f3f5f9;
   --color-bg-alert: #fdeaec;
   --color-theme-primary: #623ce6;
+  --clr-black: black;
+  --clr-white: white;
+}
+
+
+header{
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+	text-align: center;
+	font-weight: bolder;
+	padding: 1.5em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 button,
@@ -24,7 +39,7 @@ textarea {
   font: inherit;
 }
 
-img {
+.main-container img {
   display: block;
 }
 
@@ -36,7 +51,7 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
   color: var(--color-text-primary);
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-secondary) !important;
 }
 
 .main-container {
@@ -44,7 +59,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  margin-top: 6em;
+}
+
+.tournament-logo{
+  height: 5em;
 }
 
 .back-button {
@@ -69,10 +88,8 @@ body {
   background-color: var(--color-bg-primary);
   display: flex;
   flex-direction: column;
-  min-width: 600px;
   border-radius: 10px;
   box-shadow: 0 0 2px 0 rgba(#303030, 0.1), 0 4px 4px 0 rgba(#303030, 0.1);
-  margin-bottom: 20px;
   align-items: center;
   justify-content: center;
 }
