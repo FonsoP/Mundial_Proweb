@@ -388,7 +388,7 @@ body {
 
 /* Cancha con alineaciones */
 
-.matchcenter-field-container {
+/*.matchcenter-field-container {
     display: flex;
     justify-content: center;
     margin: 18px 0;
@@ -476,5 +476,5 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd7575', endColorstr='#eb0000');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd7575', endColorstr='#eb0000')";
     background: linear-gradient(top, #fd7575, #eb0000);
-}
+}*/
 
