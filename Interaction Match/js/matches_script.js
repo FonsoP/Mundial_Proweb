@@ -34,6 +34,17 @@ async function obtenerDatosConfederacion() {
 
 async function obtenerDatosPartidos() {
   const matchesApiUrl = `https://wc-qualifications-api-production.up.railway.app/api/v1/matches/${leagueId}`;
+  
+  if (leagueId === 6) { // Liga 6 es la UEFA
+    const match_by_date = document.querySelector('#match-date');
+    match_by_date.innerHTML = `
+      <div class="alert alert-warning" role="alert">
+        No hay datos disponibles para la UEFA.
+      </div>
+    `;
+    return; // Detener el resto de la ejecución
+  }
+
   try {
     const matchesData = await fetchAPI(matchesApiUrl);
     const matches = matchesData.matches;
